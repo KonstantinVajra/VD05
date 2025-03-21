@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Мой сайт{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Добро пожаловать!</h1>
+        <nav>
+            <a href="{{ url_for('main.home') }}">Главная</a> |
+            <a href="{{ url_for('main.about') }}">О нас</a>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        <!-- Сюда подставляется контент страниц -->
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Мой сайт</p>
+    </footer>
+</body>
+</html>
